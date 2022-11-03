@@ -7,16 +7,22 @@ int main(void)
 	int i, j;
 
 	printf("Enter the 5 quiz grades for each student\n");
-	for (int i = 0; i < 5; i++);
+	for (i = 0; i < 5; i++)
 	{
 		printf("Student %d: ", i + 1);
-		for (int j = 0; j < 5; j++)
+		for (j = 0; j < 5; j++)
 			scanf("%f", &grades[i][j]);
 	}
 
-	/*
+	
+	/*Per quiz stats*/
 	for (int j = 0; j < 5; j++)
 	{
+		
+		/*initialize low and high variables*/
+		low = 100.0f;
+		high = 0.0f;
+
 		printf("Quiz %d\n", j + 1);
 		
 		for (int i = 0; i < 5; i++)
@@ -33,8 +39,13 @@ int main(void)
 		printf("Average score: %.1f\n", total / 5.0f);
 		printf("High score: %.1f\n", high);
 		printf("Low score: %.1f\n", low);
+
+		/*reset total variable*/
+		total = 0.0f;
 	}
 	
+	
+	/*Per student stats*/
 	for (int i = 0; i < 5; i++)
 	{
 		printf("\nStudent %d: \n", i + 1);
@@ -48,7 +59,7 @@ int main(void)
 		printf("Average score: %.1f\n", total / 5.0f);
 		total = 0.0f;
 	}
-	*/
+	
 
 	return 0;
 
